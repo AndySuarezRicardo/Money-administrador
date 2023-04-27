@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 import pickle
 
 def save_data(balance, transactions):
@@ -49,11 +48,5 @@ def manage_balance():
         else:
             print("Invalid choice. Try again.")
     
-    plt.plot(balance_list)
-    plt.xlabel("Days")
-    plt.ylabel("Balance")
-    plt.title("Daily Balance")
-    plt.show()
-
 manage_balance()
 

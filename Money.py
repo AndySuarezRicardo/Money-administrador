@@ -1,3 +1,5 @@
+import os
+import time
 import pickle
 
 def save_data(balance, transactions):
@@ -18,35 +20,58 @@ def manage_balance():
     balance_list = [balance]
     
     while True:
-        print("1. Add Transaction")
-        print("2. Show Balance")
-        print("3. Show Transactions")
-        print("4. Save Data")
-        print("5. Quit")
-        choice = int(input("Enter your choice: "))
-        
-        if choice == 1:
-            transaction = float(input("Enter transaction amount: "))
-            transactions.append(transaction)
-            balance += transaction
-            balance_list.append(balance)
-            print(f"Transaction of {transaction} added successfully.")
-        elif choice == 2:
-            print(f"Your current balance is {balance}.")
-        elif choice == 3:
-            print("Transaction History:")
-            for i in range(len(transactions)):
-                print(f"{i+1}. {transactions[i]}")
-            print(f"\nCurrent Balance: {balance}")
-        elif choice == 4:
-            save_data(balance, transactions)
-            print("Data saved successfully.")
-        elif choice == 5:
-            save_data(balance, transactions)
-            print("Exiting...")
-            break
-        else:
-            print("Invalid choice. Try again.")
-    
+        try:
+            print("1. Add Transaction")
+            print("2. Show Balance")
+            print("3. Show Transactions")
+            print("4. Save Data")
+            print("5. Quit")
+            choice = int(input("Enter your choice: "))
+
+            if choice == 1:
+                os.system('clear')
+                transaction = float(input("Enter transaction amount: "))
+                transactions.append(transaction)
+                balance += transaction
+                balance_list.append(balance)
+                print(f"Transaction of {transaction} added successfully.")
+            elif choice == 2:
+                os.system('clear')
+                print(f"Your current balance is {balance}.")
+            elif choice == 3:
+                os.system('clear')
+                print("Transaction History:")
+                for i in range(len(transactions)):
+                    print(f"{i+1}. {transactions[i]}")
+                print(f"\nCurrent Balance: {balance}")
+            elif choice == 4:
+                os.system('clear')
+                save_data(balance, transactions)
+                print("Data saved successfully.")
+            elif choice == 5:
+                os.system('clear')
+                save_data(balance, transactions)
+                os.system('clear')
+                print("Exiting.")
+                time.sleep(1)
+                os.system('clear')
+
+                print("Exiting..")
+                time.sleep(1)
+                os.system('clear')
+
+                print("Exiting...")
+                time.sleep(1)
+                os.system('clear')
+                break
+            else:
+                os.system('clear')
+                print("Try again, you haven't selected a valid option...")
+            
+        except:
+            os.system('clear')
+            print("Try again, you haven't selected a valid option...")
+            pass
+
 manage_balance()
 

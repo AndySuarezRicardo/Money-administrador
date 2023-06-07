@@ -66,12 +66,13 @@ def manage_balance():
                 break
             else:
                 os.system('clear')
-                print("Try again, you haven't selected a valid option...")
+                print("Try again, something was wrong...")
             
         except:
             os.system('clear')
-            print("Try again, you haven't selected a valid option...")
+            print("Try again, something was wrong...")
             pass
 
 manage_balance()
+
 
